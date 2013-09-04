@@ -5,11 +5,10 @@ seq((
   Project.defaultSettings ++
     StandardProject.newSettings ++
     SubversionPublisher.newSettings ++
-    CompileThriftScrooge.newSettings ++
     ScalaTestMixins.testSettings
 ): _*)
 
-organization := "com.twitter"
+organization := "com.fishstone"
 
 name := "birdname"
 
@@ -17,8 +16,6 @@ version := "1.0.0-SNAPSHOT"
 
 libraryDependencies ++= Seq(
   "org.scala-lang" % "jline"                 % "2.9.1",
-  "com.twitter"    % "scrooge"               % "3.0.1",
-  "com.twitter"    % "scrooge-runtime_2.9.2" % "3.0.1",
   "com.twitter"    % "finagle-core"          % "5.3.6",
   "com.twitter"    % "finagle-thrift"        % "5.3.6",
   "com.twitter"    % "finagle-ostrich4"      % "5.3.1",
@@ -26,8 +23,6 @@ libraryDependencies ++= Seq(
   "com.twitter"   %% "scalatest-mixins"      % "1.1.0" % "test"
 )
 
-mainClass in (Compile, run) := Some("com.twitter.birdname.Main")
+mainClass in (Compile, run) := Some("com.fishstone.birdname.Main")
 
-mainClass in (Compile, packageBin) := Some("com.twitter.birdname.Main")
-
-CompileThriftScrooge.scroogeVersion := "3.0.1"
+mainClass in (Compile, packageBin) := Some("com.fishstone.birdname.Main")
